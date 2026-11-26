@@ -139,14 +139,16 @@ docker rm -f feedback-app
 
 ## Evidence checklist
 
+The full captured results are in [EVIDENCE.md](EVIDENCE.md).
+
 | Checkpoint | Evidence |
 | --- | --- |
-| Feedback form in a browser | `evidence/feedback-form.png` |
+| Feedback form in a browser | `evidence/feedback-form.png`, `evidence/feedback-confirmation.png` |
 | Successful Maven build and JAR | `evidence/maven-build.log`, `evidence/maven-artifact.txt` |
-| Feature branch, commit, and PR/merge | `evidence/github-branch.txt`, `evidence/github-pr.png` |
-| Jenkins pipeline success | `evidence/jenkins-success.png`, `evidence/jenkins-console.log` |
-| GitHub Actions success | `evidence/github-actions-success.png` |
-| Docker image and running container | `evidence/docker-build.log`, `evidence/docker-ps.txt`, `evidence/docker-app.png` |
+| Feature branch, commit, and PR/merge | `evidence/github-branch.png`, `evidence/github-pr.png`, `evidence/github-pr-merged.png` |
+| Jenkins pipeline success | `evidence/jenkins-success.png`, `evidence/jenkins-stages.png`, `evidence/jenkins-console.log` |
+| GitHub Actions success | `evidence/github-actions-success.png`, `evidence/github-actions-main-success.png` |
+| Docker image and running container | `evidence/docker-build.log`, `evidence/docker-ps.txt`, `evidence/docker-images.txt`, `evidence/docker-app.png` |
 
 ## Notes
 

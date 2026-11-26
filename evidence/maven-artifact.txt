@@ -1,0 +1,17 @@
+Artifact: C:\Users\Nerv\Documents\feedback form\target\feedback-app-1.0.0.jar
+Size: 8715 bytes
+SHA256: 828F88B8BB141A560D4A18F9A558D68660B15610803133161531C90FE8E9EFE8
+
+JAR contents:
+META-INF/
+META-INF/MANIFEST.MF
+com/
+com/example/
+com/example/feedback/
+META-INF/maven/
+META-INF/maven/com.example/
+META-INF/maven/com.example/feedback-app/
+com/example/feedback/App.class
+feedback.html
+META-INF/maven/com.example/feedback-app/pom.xml
+META-INF/maven/com.example/feedback-app/pom.properties

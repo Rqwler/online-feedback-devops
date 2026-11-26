@@ -1,0 +1,308 @@
+{
+    "_class":  "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "actions":  [
+                    {
+                        "_class":  "hudson.model.CauseAction",
+                        "causes":  [
+                                       {
+                                           "_class":  "hudson.cli.BuildCommand$CLICause",
+                                           "shortDescription":  "Started from command line by admin",
+                                           "userId":  "admin",
+                                           "userName":  "admin"
+                                       }
+                                   ]
+                    },
+                    {
+                        "_class":  "org.jenkinsci.plugins.workflow.libs.LibrariesAction",
+                        "libraries":  [
+
+                                      ]
+                    },
+                    {
+
+                    },
+                    {
+                        "_class":  "hudson.plugins.git.util.BuildData",
+                        "buildsByBranchName":  {
+                                                   "refs/remotes/origin/main":  {
+                                                                                    "_class":  "hudson.plugins.git.util.Build",
+                                                                                    "buildNumber":  1,
+                                                                                    "buildResult":  null,
+                                                                                    "marked":  {
+                                                                                                   "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                                                                   "branch":  [
+                                                                                                                  {
+                                                                                                                      "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                                                                                      "name":  "refs/remotes/origin/main"
+                                                                                                                  }
+                                                                                                              ]
+                                                                                               },
+                                                                                    "revision":  {
+                                                                                                     "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                                                                     "branch":  [
+                                                                                                                    {
+                                                                                                                        "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                                                                                        "name":  "refs/remotes/origin/main"
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                 }
+                                                                                }
+                                               },
+                        "lastBuiltRevision":  {
+                                                  "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                  "branch":  [
+                                                                 {
+                                                                     "SHA1":  "dc37b9a7b6fb87a1d5f7630d571e70a6ed8b7e14",
+                                                                     "name":  "refs/remotes/origin/main"
+                                                                 }
+                                                             ]
+                                              },
+                        "remoteUrls":  [
+                                           "https://github.com/Rqwler/online-feedback-devops.git"
+                                       ],
+                        "scmName":  ""
+                    },
+                    {
+
+                    },
+                    {
+                        "_class":  "org.jenkinsci.plugins.workflow.cps.EnvActionImpl",
+                        "environment":  {
+
+                                        }
+                    },
+                    {
+                        "_class":  "hudson.tasks.junit.TestResultAction",
+                        "failCount":  0,
+                        "skipCount":  0,
+                        "totalCount":  7,
+                        "urlName":  "testReport"
+                    },
+                    {
+
+                    },
+                    {
+
+                    },
+                    {
+
+                    },
+                    {
+
+                    },
+                    {
+
+                    },
+                    {
+                        "_class":  "org.jenkinsci.plugins.displayurlapi.actions.RunDisplayAction",
+                        "artifactsUrl":  "http://localhost:8080/job/online-feedback-pipeline/lastBuild/artifact",
+                        "changesUrl":  "http://localhost:8080/job/online-feedback-pipeline/changes",
+                        "displayUrl":  "http://localhost:8080/job/online-feedback-pipeline/lastBuild/",
+                        "testsUrl":  "http://localhost:8080/job/online-feedback-pipeline/lastBuild/testReport"
+                    },
+                    {
+                        "_class":  "org.jenkinsci.plugins.pipeline.modeldefinition.actions.RestartDeclarativePipelineAction",
+                        "restartEnabled":  true,
+                        "restartableStages":  [
+                                                  "Checkout",
+                                                  "Build",
+                                                  "Test",
+                                                  "Package"
+                                              ]
+                    },
+                    {
+
+                    },
+                    {
+                        "_class":  "org.jenkinsci.plugins.workflow.job.views.FlowGraphAction",
+                        "nodes":  [
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.graph.FlowStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepStartNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepAtomNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode"
+                                      },
+                                      {
+                                          "_class":  "org.jenkinsci.plugins.workflow.graph.FlowEndNode"
+                                      }
+                                  ]
+                    },
+                    {
+
+                    },
+                    {
+
+                    }
+                ],
+    "artifacts":  [
+                      {
+                          "displayPath":  "feedback-app-1.0.0.jar",
+                          "fileName":  "feedback-app-1.0.0.jar",
+                          "relativePath":  "target/feedback-app-1.0.0.jar"
+                      }
+                  ],
+    "building":  false,
+    "description":  null,
+    "displayName":  "#1",
+    "duration":  38769,
+    "estimatedDuration":  38769,
+    "executor":  null,
+    "fullDisplayName":  "online-feedback-pipeline #1",
+    "id":  "1",
+    "keepLog":  false,
+    "number":  1,
+    "queueId":  2,
+    "result":  "SUCCESS",
+    "timestamp":  1795668215607,
+    "url":  "http://localhost:8080/job/online-feedback-pipeline/1/",
+    "changeSets":  [
+
+                   ],
+    "culprits":  [
+
+                 ],
+    "inProgress":  false,
+    "nextBuild":  null,
+    "previousBuild":  null
+}

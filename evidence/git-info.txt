@@ -1,0 +1,36 @@
+Branch: main
+
+Branches:
+  feature/feedback-confirmation
+  feature/feedback-form
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/feature/feedback-confirmation
+  remotes/origin/main
+
+Recent commits:
+dc37b9a (HEAD -> main, origin/main, origin/HEAD) Merge pull request #1 from Rqwler/feature/feedback-confirmation
+25d6f34 (origin/feature/feedback-confirmation, feature/feedback-confirmation) Add feedback confirmation summary and DevOps workflow files
+656bf83 Add README with evidence capture steps
+c0b120f Merge feature/feedback-form into main
+3c7d9c8 Initial commit: Maven config
+57957b7 (feature/feedback-form) Add feedback form, Java server, tests, Jenkinsfile, GitHub Actions workflow and Dockerfile
+
+Remote:
+origin	https://github.com/Rqwler/online-feedback-devops.git (fetch)
+origin	https://github.com/Rqwler/online-feedback-devops.git (push)
+
+Merge commit:
+dc37b9a Merge pull request #1 from Rqwler/feature/feedback-confirmation
+
+ .dockerignore                                   |   8 +
+ .github/workflows/maven-build.yml               |  22 ++-
+ .gitignore                                      |   2 +
+ Dockerfile                                      |  11 +-
+ Jenkinsfile                                     |  31 ++--
+ README.md                                       | 198 +++++++++++++++++++-----
+ docker-compose.yml                              |  10 ++
+ feedback.html                                   | 121 ++++++++++++---
+ src/main/java/com/example/feedback/App.java     | 180 +++++++++++++++++----
+ src/test/java/com/example/feedback/AppTest.java |  44 +++++-
+ 10 files changed, 516 insertions(+), 111 deletions(-)
