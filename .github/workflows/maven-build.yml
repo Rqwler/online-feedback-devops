@@ -4,10 +4,15 @@ on:
   push:
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,11 +24,20 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build with Maven
-        run: mvn -B package
+      - name: Build and test with Maven
+        run: mvn -B clean verify
 
-      - name: Upload jar
+      - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: feedback-app-jar
-          path: target/*.jar
+          path: target/feedback-app-1.0.0.jar
+          if-no-files-found: error
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports/
+          if-no-files-found: ignore

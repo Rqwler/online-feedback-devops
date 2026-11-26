@@ -3,53 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Online feedback form for the DevOps demo application">
   <title>Online Feedback Form</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f2f5f9; margin: 0; padding: 2rem; }
-    .card { max-width: 480px; margin: 0 auto; background: #fff; padding: 1.5rem 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
-    h1 { margin-top: 0; font-size: 1.5rem; }
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef3fb 0%, #e0f2f1 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      color: #1f2937;
+    }
+    .card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .12);
+    }
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 .6rem;
+      padding: .25rem .6rem;
+      border-radius: 999px;
+      background: #e0f2f1;
+      color: #0f766e;
+      font-size: .75rem;
+      font-weight: bold;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 .4rem; font-size: 1.6rem; }
+    .subtitle { margin: 0 0 1.4rem; color: #64748b; line-height: 1.45; }
     label { display: block; margin-top: 1rem; font-weight: bold; }
-    input, select, textarea { width: 100%; padding: .5rem; margin-top: .3rem; box-sizing: border-box; border: 1px solid #bbb; border-radius: 4px; font-size: 1rem; }
-    .rating { display: flex; gap: 1rem; margin-top: .4rem; }
-    .rating label { display: inline; font-weight: normal; margin: 0; }
-    .rating input { width: auto; margin-right: .25rem; }
-    button { margin-top: 1.5rem; padding: .6rem 1.4rem; background: #1a73e8; color: #fff; border: 0; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+    input, select, textarea {
+      width: 100%;
+      padding: .6rem;
+      margin-top: .35rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font: inherit;
+      color: inherit;
+      background: #fff;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #93c5fd;
+      border-color: #1a73e8;
+    }
+    textarea { resize: vertical; }
+    .rating {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: .4rem;
+    }
+    .rating span {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      padding: .35rem .55rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      background: #f8fafc;
+    }
+    .rating input { width: auto; margin: 0; }
+    .rating label { display: inline; margin: 0; font-weight: normal; }
+    button {
+      width: 100%;
+      margin-top: 1.6rem;
+      padding: .75rem 1.4rem;
+      background: #1a73e8;
+      color: #fff;
+      border: 0;
+      border-radius: 6px;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
     button:hover { background: #1558b0; }
+    .note { margin: 1rem 0 0; color: #64748b; font-size: .85rem; text-align: center; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Online Feedback Form</h1>
+  <main class="card">
+    <p class="eyebrow">Online Feedback</p>
+    <h1>Tell us what you think</h1>
+    <p class="subtitle">Your response helps us improve the product. It only takes a minute.</p>
+
     <form action="/submit" method="post">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
 
       <label for="category">Feedback Category</label>
       <select id="category" name="category" required>
-        <option value="">-- Select --</option>
-        <option>General</option>
-        <option>Bug Report</option>
-        <option>Feature Request</option>
-        <option>Praise</option>
+        <option value="">-- Select a category --</option>
+        <option value="General">General</option>
+        <option value="Bug Report">Bug Report</option>
+        <option value="Feature Request">Feature Request</option>
+        <option value="Praise">Praise</option>
+        <option value="Other">Other</option>
       </select>
 
       <label>Rating</label>
       <div class="rating">
-        <span><input type="radio" id="r1" name="rating" value="1" required><label for="r1">1</label></span>
+        <span><input type="radio" id="r1" name="rating" value="1" required><label for="r1">1 - Poor</label></span>
         <span><input type="radio" id="r2" name="rating" value="2"><label for="r2">2</label></span>
-        <span><input type="radio" id="r3" name="rating" value="3"><label for="r3">3</label></span>
+        <span><input type="radio" id="r3" name="rating" value="3"><label for="r3">3 - Okay</label></span>
         <span><input type="radio" id="r4" name="rating" value="4"><label for="r4">4</label></span>
-        <span><input type="radio" id="r5" name="rating" value="5"><label for="r5">5</label></span>
+        <span><input type="radio" id="r5" name="rating" value="5"><label for="r5">5 - Excellent</label></span>
       </div>
 
       <label for="comments">Comments</label>
-      <textarea id="comments" name="comments" rows="4"></textarea>
+      <textarea id="comments" name="comments" rows="4" maxlength="1000" placeholder="Share the details of your feedback (optional)"></textarea>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Feedback</button>
     </form>
-  </div>
+    <p class="note">Your feedback is stored only for this demo.</p>
+  </main>
 </body>
 </html>

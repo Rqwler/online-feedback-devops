@@ -1,27 +1,26 @@
 pipeline {
     agent any
 
-    tools {
-        // Names must match the tool names configured in Manage Jenkins > Tools.
-        // Remove this block if Maven/JDK are already on the agent's PATH.
-        maven 'Maven3'
-        jdk 'JDK17'
+    options {
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
     }
 
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
+                echo "Building ${env.JOB_NAME} #${env.BUILD_NUMBER}"
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn -B clean compile'
+                mvnStep('clean compile')
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn -B test'
+                mvnStep('test')
             }
             post {
                 always {
@@ -31,14 +30,26 @@ pipeline {
         }
         stage('Package') {
             steps {
-                sh 'mvn -B package -DskipTests'
+                mvnStep('package -DskipTests')
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
     }
 
     post {
-        success { echo 'Pipeline finished successfully.' }
-        failure { echo 'Pipeline failed.' }
+        success {
+            echo 'Pipeline finished successfully.'
+        }
+        failure {
+            echo 'Pipeline failed. Check the stage logs.'
+        }
+    }
+}
+
+def mvnStep(String arguments) {
+    if (isUnix()) {
+        sh "mvn -B ${arguments}"
+    } else {
+        bat "mvn -B ${arguments}"
     }
 }
